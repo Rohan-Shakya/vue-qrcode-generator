@@ -27,6 +27,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: example/dist
+          folder: demo/dist
           clean: true
           single-commit: true
