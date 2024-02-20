@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rohan-Shakya" />
+    <meta name="Keywords" content="vue-qr-code, qrcode, vue-qr, vue" />
+    <title>Vue QR Code</title>
+    <meta name="description" content="A Vue component for QR code." />
+    <link rel="icon" type="images/png" href="logo.png" />
+    <link rel="canonical" href="http://localhost:8080" />
+    <meta property="og:site_name" content="vue-qr-code" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vue QR Code" />
+    <meta property="og:description" content="A Vue component for QR code." />
+    <meta property="og:url" content="http://localhost:8080" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Vue QR Code" />
+    <meta name="twitter:description" content="A Vue component for QR code." />
+    <meta name="twitter:url" content="http://localhost:8080" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #2e77c8;
+      }
+
+      .container {
+        width: 100%;
+        min-width: 768px;
+        height: 100%;
+        background: #fff;
+        border-radius: 7px;
+        padding: 1rem 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .generator header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .btn {
+        position: relative;
+        display: inline-flex;
+        padding: 4px 8px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 14px;
+        vertical-align: bottom;
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid #333;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .fork {
+        margin-left: 1rem;
+      }
+
+      .generator h1 {
+        font-size: 2rem;
+      }
+
+      .generator-form {
+        margin: 1rem 0;
+        height: 80vh;
+        overflow: auto;
+      }
+
+      .generator-form .form-input {
+        margin: 10px 0;
+      }
+
+      .generator-form .form-label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .generator-form .form-textarea,
+      .generator-form .form-select {
+        width: 100%;
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        border: 1px solid #999;
+        font-size: 1rem;
+        padding: 10px;
+        transition: all 0.5s;
+        resize: vertical;
+      }
+
+      .generator-form .form-range {
+        width: 100%;
+      }
+
+      .generator-form .form-color {
+        height: 3rem;
+        border: none;
+        width: 100%;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .column-4 {
+        flex: 0 0 40%;
+        max-width: 40%;
+        height: 100%;
+        align-self: stretch;
+      }
+
+      .column-8 {
+        flex: 0 0 60%;
+        max-width: 60%;
+        height: 100%;
+        align-self: stretch;
+        text-align: center;
+        padding-left: 2rem;
+      }
+
+      .qr-code-wrapper {
+        margin: auto;
+        width: max-content;
+        padding: 1rem;
+        border: 2px dashed #555;
+        pointer-events: none;
+      }
+
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="container">
+        <div class="generator">
+          <header>
+            <h1>QR Code Generator</h1>
+            <div class="row">
+              <div class="star" v-cloak>
+                <a
+                  class="btn"
+                  href="https://github.com/Rohan-Shakya/vue-qr-code"
+                  rel="noopener"
+                  target="_blank"
+                  aria-label="Star vue-qr-code on GitHub"
+                >
+                  <svg
+                    viewBox="0 0 16 16"
+                    width="14"
+                    height="14"
+                    class="octicon octicon-mark-github"
+                    aria-hidden="true"
+                    style="margin-right: 5px"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+                    ></path>
+                  </svg>
+                  <span>Star</span>
+                </a>
+                <a
+                  class="btn"
+                  href="https://github.com/Rohan-Shakya/vue-qr-code/stargazers"
+                  rel="noopener"
+                  target="_blank"
+                  :aria-label="`${stargazersCount} stargazers on GitHub`"
+                >
+                  {{ stargazersCount }}
+                </a>
+              </div>
+              <div class="fork">
+                <a
+                  href="https://github.com/Rohan-Shakya/vue-qr-code"
+                  class="btn"
+                  rel="noopener"
+                  target="_blank"
+                  aria-label="Fork Me"
+                >
+                  Fork Me
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <form class="generator-form">
+            <div class="form-input">
+              <label class="form-label">Value:</label>
+              <textarea
+                v-model="value"
+                class="form-textarea"
+                rows="2"
+              ></textarea>
+            </div>
+            <div class="row">
+              <div class="column-4">
+                <div class="form-input">
+                  <label class="form-label">Size:</label>
+                  <input
+                    type="range"
+                    v-model="size"
+                    min="100"
+                    max="380"
+                    step="20"
+                    class="form-range"
+                  />
+                </div>
+                <div class="form-input">
+                  <label class="form-label">Margin:</label>
+                  <input
+                    type="range"
+                    v-model="margin"
+                    min="0"
+                    max="10"
+                    step="1"
+                    class="form-range"
+                  />
+                </div>
+                <div class="form-input">
+                  <label class="form-label">Level:</label>
+                  <select v-model="level" class="form-select">
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                    <option value="Q">Q</option>
+                    <option value="H">H</option>
+                  </select>
+                </div>
+                <div class="form-input">
+                  <label class="form-label">Format:</label>
+                  <select v-model="renderAs" class="form-select">
+                    <option value="svg">SVG</option>
+                    <option value="canvas">Canvas</option>
+                  </select>
+                </div>
+                <div class="form-input">
+                  <label class="form-label">Background:</label>
+                  <input type="color" class="form-color" v-model="background" />
+                </div>
+                <div class="form-input">
+                  <label class="form-label">Foreground:</label>
+                  <input type="color" class="form-color" v-model="foreground" />
+                </div>
+              </div>
+              <div class="column-8">
+                <div class="form-input">
+                  <label class="form-label">QR Code:</label>
+                  <div class="qr-code-wrapper">
+                    <vue-qr-code
+                      class="qrcode"
+                      :value="value"
+                      :margin="Number(margin)"
+                      :render-as="renderAs"
+                      :size="Number(size)"
+                      :level="level"
+                      :background="background"
+                      :foreground="foreground"
+                      :image-settings="imageSettings"
+                    ></vue-qr-code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
