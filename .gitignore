@@ -132,8 +132,5 @@ dist
 #idea
 .idea/
 
-#VisualStudioCode
-.vscode/
-
 #OS
 .DS_STORE
