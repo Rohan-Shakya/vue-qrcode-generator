@@ -1,19 +1,19 @@
 {
-  "name": "vue-qr-code",
+  "name": "vue-qrcode-generator",
   "version": "0.1.0",
   "description": "A Vue component for QR code.",
   "type": "module",
-  "main": "./dist/vue-qr-code.vue.cjs.js",
-  "module": "./dist/vue-qr-code.vue.esm.js",
-  "browser": "./dist/vue-qr-code.vue.browser.js",
-  "unpkg": "./dist/vue-qr-code.vue.browser.min.js",
-  "jsdelivr": "./dist/vue-qr-code.vue.browser.min.js",
+  "main": "./dist/vue-qrcode-generator.vue.cjs.js",
+  "module": "./dist/vue-qrcode-generator.vue.esm.js",
+  "browser": "./dist/vue-qrcode-generator.vue.browser.js",
+  "unpkg": "./dist/vue-qrcode-generator.vue.browser.min.js",
+  "jsdelivr": "./dist/vue-qrcode-generator.vue.browser.min.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/vue-qr-code.vue.esm.js",
-      "require": "./dist/vue-qr-code.vue.cjs.js"
+      "import": "./dist/vue-qrcode-generator.vue.esm.js",
+      "require": "./dist/vue-qrcode-generator.vue.cjs.js"
     },
     "./package": "./package.json"
   },
@@ -28,9 +28,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rohan-Shakya/vue-qr-code.git"
+    "url": "git+https://github.com/Rohan-Shakya/vue-qrcode-generator.git"
   },
   "keywords": [
+    "vue-qrcode-generator",
     "vue-qr-code",
     "qrcode",
     "vue-qr",
@@ -43,12 +44,12 @@
   "author": "Rohan-Shakya <contact@shakyarohan.com.np>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Rohan-Shakya/vue-qr-code/issues"
+    "url": "https://github.com/Rohan-Shakya/vue-qrcode-generator/issues"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
-  "homepage": "https://github.com/Rohan-Shakya/vue-qr-code#readme",
+  "homepage": "https://github.com/Rohan-Shakya/vue-qrcode-generator#readme",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "@typescript-eslint/eslint-plugin": "^5.40.0",

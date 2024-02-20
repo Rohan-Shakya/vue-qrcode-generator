@@ -5,7 +5,7 @@ import pkg from "./package.json" assert { type: "json" };
 
 const banner =
   "/*!" +
-  "\n * vue-qr-code " +
+  "\n * vue-qrcode-generator " +
   pkg.version +
   "\n * " +
   pkg.description +

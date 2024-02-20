@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Rohan-Shakya" />
-    <meta name="Keywords" content="vue-qr-code, qrcode, vue-qr, vue" />
+    <meta name="Keywords" content="vue-qrcode-generator, qrcode, vue-qr, vue" />
     <title>Vue QR Code</title>
     <meta name="description" content="A Vue component for QR code." />
-    <link rel="icon" type="images/png" href="logo.png" />
+    <link
+      rel="icon"
+      type="images/png"
+      href="https://raw.githubusercontent.com/Rohan-Shakya/vue-qrcode-generator/main/demo/logo.png"
+    />
     <link rel="canonical" href="http://localhost:8080" />
-    <meta property="og:site_name" content="vue-qr-code" />
+    <meta property="og:site_name" content="vue-qrcode-generator" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Vue QR Code" />
     <meta property="og:description" content="A Vue component for QR code." />
@@ -164,10 +168,10 @@
               <div class="star" v-cloak>
                 <a
                   class="btn"
-                  href="https://github.com/Rohan-Shakya/vue-qr-code"
+                  href="https://github.com/Rohan-Shakya/vue-qrcode-generator"
                   rel="noopener"
                   target="_blank"
-                  aria-label="Star vue-qr-code on GitHub"
+                  aria-label="Star vue-qrcode-generator on GitHub"
                 >
                   <svg
                     viewBox="0 0 16 16"
@@ -186,7 +190,7 @@
                 </a>
                 <a
                   class="btn"
-                  href="https://github.com/Rohan-Shakya/vue-qr-code/stargazers"
+                  href="https://github.com/Rohan-Shakya/vue-qrcode-generator/stargazers"
                   rel="noopener"
                   target="_blank"
                   :aria-label="`${stargazersCount} stargazers on GitHub`"
@@ -196,7 +200,7 @@
               </div>
               <div class="fork">
                 <a
-                  href="https://github.com/Rohan-Shakya/vue-qr-code"
+                  href="https://github.com/Rohan-Shakya/vue-qrcode-generator"
                   class="btn"
                   rel="noopener"
                   target="_blank"
@@ -270,7 +274,7 @@
                 <div class="form-input">
                   <label class="form-label">QR Code:</label>
                   <div class="qr-code-wrapper">
-                    <vue-qr-code
+                    <vue-qrcode-generator
                       class="qrcode"
                       :value="value"
                       :margin="Number(margin)"
@@ -280,7 +284,7 @@
                       :background="background"
                       :foreground="foreground"
                       :image-settings="imageSettings"
-                    ></vue-qr-code>
+                    ></vue-qrcode-generator>
                   </div>
                 </div>
               </div>

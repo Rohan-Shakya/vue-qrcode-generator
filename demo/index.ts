@@ -1,11 +1,11 @@
 import { createApp, defineComponent, onMounted, ref } from "vue";
-import VueQRCode from "../src";
+import VueQRCodeGenerator from "../src";
 import type { Level, RenderAs, ImageSettings } from "../src";
 
 const App = defineComponent({
-  components: { "vue-qr-code": VueQRCode },
+  components: { "vue-qrcode-generator": VueQRCodeGenerator },
   setup() {
-    const value = ref("https://github.com/Rohan-Shakya/vue-qr-code");
+    const value = ref("https://github.com/Rohan-Shakya/vue-qrcode-generator");
     const size = ref(250);
     const level = ref<Level>("L");
     const background = ref("#ffffff");
@@ -21,7 +21,7 @@ const App = defineComponent({
       excavate: false,
     });
 
-    const stargazersCount = ref(0);
+    const stargazersCount = ref(1);
 
     onMounted(() => {
       fetchGitHubRepoStarCount((repoDetail: any) => {
@@ -50,7 +50,7 @@ const App = defineComponent({
 createApp(App).mount("#root");
 
 function fetchGitHubRepoStarCount(callback: Function) {
-  const repo = "https://api.github.com/repos/Rohan-Shakya/vue-qr-code";
+  const repo = "https://api.github.com/repos/Rohan-Shakya/vue-qrcode-generator";
 
   try {
     const xhr = new XMLHttpRequest();
