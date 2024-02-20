@@ -23,7 +23,8 @@
     "format:ci": "prettier --check --ignore-unknown '**/*.{js,ts,mjs,cjs,json}'",
     "dev": "webpack serve --config webpack.config.js --mode=development",
     "build": "rollup -c",
-    "start:server": "node demo/server.js"
+    "start:server": "node demo/server.js",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -57,6 +58,7 @@
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^9.1.0",
     "html-webpack-plugin": "^5.5.4",
+    "husky": "^9.0.11",
     "prettier": "^3.0.3",
     "rollup": "^4.8.0",
     "rollup-plugin-typescript2": "^0.36.0",
