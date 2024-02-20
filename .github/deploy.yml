@@ -1,0 +1,32 @@
+name: Deploy Demo
+
+on:
+  release:
+    types:
+      - created
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build GitHub Pages
+        run: yarn webpack --mode=production
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: example/dist
+          clean: true
+          single-commit: true
