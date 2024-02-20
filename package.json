@@ -1,5 +1,5 @@
 {
-  "name": "vue-qrcode-generator",
+  "name": "@rohan-shakya/vue-qrcode-generator",
   "version": "0.1.0",
   "description": "A Vue component for QR code.",
   "type": "module",
